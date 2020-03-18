@@ -22,9 +22,8 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Git setup
+The default branch is `dev`. `master` is only used for deploys.
 
 ## Deploy
 1. The output path in angular.json needs to be set to dist
@@ -34,3 +33,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ```ng build --prod --base-href 'https://cindyvandooren.github.io'```
 4. Deploy to master branch
 ```ngh --message="First deploy" -b master --cname=cindyvandooren.online```
+
+## Further help
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
