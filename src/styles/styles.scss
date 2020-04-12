@@ -1,0 +1,15 @@
+@import '~normalize.css';
+@import './variables';
+
+/* You can add global styles to this file, and also import other style files */
+body {
+  padding: 0;
+  margin: auto;
+  max-width: 960px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}

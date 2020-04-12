@@ -1,0 +1,36 @@
+// Media queries
+$phone-width: 480px;
+$tablet-width: 768px;
+
+@mixin phone-and-up {
+  @media (min-width: #{$phone-width}) {
+    @content;
+  }
+}
+
+@mixin tablet-and-up {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+// Colors
+$white: #e4e6dd;
+$yellow: #c29c06;
+$grey: #36352e;
+$light-grey: #999993;
+$dark-blue: #050369;
+
+// Gradient mixins
+@mixin gradient-text {
+  background-image: linear-gradient(to right, $yellow 0%, $grey 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 100%;
+  background-color: $yellow;
+}
+
+@mixin gradient-border {
+  border-image: linear-gradient(to right, $yellow 0%, $light-grey 100%);
+  border-image-slice: 1;
+}

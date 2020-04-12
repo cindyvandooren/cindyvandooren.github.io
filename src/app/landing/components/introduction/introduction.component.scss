@@ -1,0 +1,165 @@
+@import '../../../../styles/variables';
+
+:host {
+  padding: 20px;
+  margin-top: 40px;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header-intro {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+h1 {
+  @include gradient-text;
+  display: block;
+  color: $yellow;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 0px;
+}
+
+h2 {
+  @include gradient-text;
+  text-align: center;
+  margin-top: 10px;
+}
+
+h3 {
+  width: 90%;
+  color: $light-grey;
+  text-align: center;
+}
+
+.hexagon-wrapper {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.hexagon {
+  width: 400px;
+  height: 200px;
+  transform: rotate(120deg);
+  -moz-transform: rotate(120deg);
+  -ms-transform: rotate(120deg);
+  -o-transform: rotate(120deg);
+  -webkit-transform: rotate(120deg);
+  margin-left: -100px;
+  overflow: hidden;
+  visibility: hidden;
+
+  .hexagon-inside {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-60deg);
+    -moz-transform: rotate(-60deg);
+    -ms-transform: rotate(-60deg);
+    -o-transform: rotate(-60deg);
+    -webkit-transform: rotate(-60deg);
+    overflow: hidden;
+  }
+
+  .hexagon-image {
+    width: 100%;
+    height: 100%;
+    background-image: url(../../../../assets/images/cindy.jpg);
+    background-position: top center;
+    background-size: 60%;
+    transform: rotate(-60deg);
+    -moz-transform: rotate(-60deg);
+    -ms-transform: rotate(-60deg);
+    -o-transform: rotate(-60deg);
+    -webkit-transform: rotate(-60deg);
+    visibility: visible;
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  margin: 60px 20px;
+  font-size: 1em;
+  line-height: 1.25em;
+
+  figure {
+    margin: 60px auto;
+
+    img {
+      border: 5px solid;
+      position: relative;
+      color: black;
+      @include gradient-border;
+    }
+
+    figcaption {
+      color: $yellow;
+      text-align: center;
+    }
+  }
+}
+
+@include phone-and-up {
+  .hexagon {
+    width: 600px;
+    height: 300px;
+    margin-left: -150px;
+  }
+
+  .hexagon-wrapper {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    margin-top: 40px;
+  }
+}
+
+@include tablet-and-up {
+  .intro {
+    flex-direction: row-reverse;
+  }
+
+  .header-intro {
+    width: 50%;
+  }
+
+  .hexagon-wrapper {
+    margin-top: 0px;
+  }
+
+  h1 {
+    margin-top: 40px;
+  }
+
+  .row {
+    flex-direction: row;
+
+    figure {
+      margin: 0;
+      margin-left: 20px;
+    }
+
+    &.reverse {
+      flex-direction: row-reverse;
+
+      figure {
+        margin: 0;
+        margin-right: 20px;
+      }
+    }
+  }
+}

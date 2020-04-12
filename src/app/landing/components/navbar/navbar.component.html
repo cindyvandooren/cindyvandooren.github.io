@@ -1,0 +1,17 @@
+<div class="logo" (click)="openNav()">
+  <div class="hexagon">
+    <a routerLink="introduction" class="home">
+      <span class="material-icons home">home</span>
+    </a>
+    <a class="menu">
+      <span class="material-icons menu">menu</span>
+    </a>
+  </div>
+</div>
+
+<ul class="navigation-items" [ngClass]="{'open': navOpen}" (click)="navOpen=!navOpen">
+  <li><a routerLink="introduction" routerLinkActive="active">Home</a></li>
+  <li><a routerLink="work" routerLinkActive="active">Work</a></li>
+  <li><a routerLink="education" routerLinkActive="active">Education</a></li>
+  <li><a routerLink="contact" routerLinkActive="active">Contact</a></li>
+</ul>

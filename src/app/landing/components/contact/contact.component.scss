@@ -1,0 +1,151 @@
+@import '../../../../styles/variables';
+
+:host {
+  padding: 20px;
+  display: block;
+  box-sizing: border-box;
+  min-width: 200px;
+  max-width: 600px;
+  margin: 40px auto;
+  height: 700px;
+  width: 100%;
+}
+
+h1 {
+  @include gradient-text;
+  width: 120px;
+  height: 30px;
+  margin: auto 0;
+  position: relative;
+  top: 0px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transition: 1s;
+  transform: translateY(0px);
+}
+
+.menu {
+  height: 140px;
+  width: 160px;
+  position: relative;
+  margin: auto;
+  top: 110px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.menu {
+  transform: scale(0.6);
+}
+
+.item {
+  height: 0;
+  width: 80px;
+  border-bottom: 70px solid $yellow;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  position: absolute;
+  top: 0;
+  transition: 1s;
+
+  &.item1 {
+    transform: translateY(-160px);
+  }
+
+  &.item3 {
+    transform: translateY(160px);
+  }
+
+  &.item4 {
+    transform: translateY(320px);
+  }
+
+  &.item5 {
+    transform: translateY(480px);
+  }
+
+  &.item6 {
+    transform: translateY(640px);
+  }
+}
+
+.item::before {
+  content: '';
+  height: 0;
+  width: 80px;
+  border-top: 70px solid $yellow;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  position: absolute;
+  top: 70px;
+  left: -40px;
+}
+
+a > .fa {
+  color: white;
+  font-size: 60px;
+
+  &:hover {
+    color: $grey;
+    transform: scale(1.3);
+  }
+}
+
+a {
+  position: relative;
+  top: 40px;
+  left: 15px;
+
+  &.small {
+    left: 20px;
+  }
+
+  &.wide {
+    left: 10px;
+  }
+
+  &.extra-wide {
+    left: 7px;
+  }
+}
+
+@include phone-and-up {
+  h1 {
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    transform: translateY(220px);
+  }
+
+  .menu {
+    transform: scale(1);
+    top: 140px;
+  }
+
+  .item {
+    &.item2 {
+      transform: translate(140px, -80px);
+    }
+
+    &.item3 {
+      transform: translate(140px, 80px);
+    }
+
+    &.item4 {
+      transform: translateY(160px);
+    }
+
+    &.item5 {
+      transform: translate(-140px, 80px);
+    }
+
+    &.item6 {
+      transform: translate(-140px, -80px);
+    }
+  }
+}

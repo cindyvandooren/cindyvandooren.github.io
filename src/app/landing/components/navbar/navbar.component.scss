@@ -1,0 +1,189 @@
+@import '../../../../styles/variables';
+
+:host {
+  width: 100%;
+  height: 55px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  position: relative;
+  box-sizing: border-box;
+
+  &.open {
+    height: 240px;
+  }
+}
+
+.logo {
+  height: 35px;
+  width: 40px;
+  cursor: pointer;
+
+  .hexagon {
+    height: 0;
+    width: 20px;
+    border-bottom: 17px solid $yellow;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  .hexagon::before {
+    content: '';
+    height: 0;
+    width: 20px;
+    border-top: 17px solid $yellow;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    position: absolute;
+    top: 17px;
+    right: -10px;
+  }
+
+  a > .material-icons {
+    color: $grey;
+    font-size: 15px;
+
+    &:hover {
+      color: $white;
+      transform: scale(1.3);
+    }
+  }
+
+  a.menu {
+    display: inline-block;
+  }
+
+  a.home {
+    display: none;
+  }
+
+  .hexagon > a {
+    position: relative;
+    top: 10px;
+    left: 2px;
+  }
+}
+
+ul {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: none;
+
+  &.open {
+    margin: 45px 55px 0 0;
+    display: flex;
+    flex-direction: column;
+
+    li {
+      border-bottom: 1px solid $light-grey;
+      padding: 10px;
+      text-align: center;
+    }
+  }
+}
+
+li {
+  width: 100%;
+  list-style: none;
+  cursor: pointer;
+  border-bottom: 1px solid $light-grey;
+  color: $light-grey;
+
+  a {
+    color: $light-grey;
+
+    &.active {
+      color: black;
+    }
+  }
+
+  &:hover {
+    a {
+      color: $yellow;
+    }
+  }
+}
+
+@include phone-and-up {
+  :host {
+    height: 70px;
+    padding: 20px;
+
+    &.open {
+      height: 70px;
+    }
+  }
+
+  .logo {
+    height: 70px;
+    width: 80px;
+
+    .hexagon {
+      width: 40px;
+      border-bottom: 35px solid $yellow;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      top: 20px;
+      left: 20px;
+    }
+
+    .hexagon::before {
+      width: 40px;
+      border-top: 35px solid $yellow;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      top: 35px;
+      left: -20px;
+    }
+
+    a > .material-icons {
+      font-size: 30px;
+    }
+
+    a.menu {
+      display: none;
+    }
+
+    a.home {
+      display: inline-block;
+    }
+
+    .hexagon > a {
+      top: 20px;
+      left: 5px;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    margin-left: 60px;
+
+    &.open {
+      display: flex;
+      padding-top: 0;
+      flex-direction: row;
+      margin-top: 0;
+      margin-left: 60px;
+      margin-right: 0px;
+
+      li {
+        border: none;
+        border-bottom: 1px solid $light-grey;
+        padding: 5px;
+        text-align: left;
+      }
+    }
+
+    li {
+      max-width: 70px;
+      height: 30px;
+      margin: 10px;
+      padding: 5px;
+    }
+  }
+}
