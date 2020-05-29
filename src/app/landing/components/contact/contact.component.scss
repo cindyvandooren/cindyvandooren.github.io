@@ -113,13 +113,24 @@ a {
 
 @include phone-and-up {
   h1 {
+    @include gradient-text;
     margin: auto;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
 
-    transform: translateY(220px);
+    // Firefox refuses to render -webkit-background-clip: text (used in gradient-text mixins) if element is translated
+    // more than half its width away. More info:
+    // https://stackoverflow.com/questions/55725461/webkit-background-clip-text-on-an-element-with-transition-is-not-working-after
+    @include firefox-only {
+      position: absolute;
+      top: 100px;
+    }
+
+    @include not-firefox {
+      transform: translateY(220px);
+    }
   }
 
   .menu {

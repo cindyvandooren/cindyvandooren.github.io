@@ -2,7 +2,6 @@
 
 @mixin timeline {
   h1 {
-    color: $yellow;
     @include gradient-text;
   }
 
@@ -51,6 +50,9 @@
   // borders for odd sections
   section:nth-child(odd) {
     border-right: 3px solid;
+    border-bottom: 3px solid;
+    border-left: 0;
+    border-top: 0;
 
     &:before {
       left: 100%;
@@ -61,6 +63,9 @@
   // borders for even sections
   section:nth-child(even) {
     border-left: 3px solid;
+    border-bottom: 3px solid;
+    border-right: 0;
+    border-top: 0;
 
     &:before {
       right: 100%;
@@ -70,7 +75,6 @@
 
   // deal with first section
   section:first-child {
-    border-top: 0;
     border-top-right-radius:0;
     border-top-left-radius:0;
   }
@@ -79,5 +83,6 @@
   section:last-child {
     border-bottom-right-radius:0;
     border-bottom-left-radius:0;
+    border-bottom: 0;
   }
 }

@@ -21,10 +21,24 @@ $grey: #36352e;
 $light-grey: #999993;
 $dark-blue: #050369;
 
+// Target Firefox only
+@mixin firefox-only {
+  @supports(-moz-appearance: none) {
+    @content;
+  }
+}
+
+@mixin not-firefox {
+  @supports not(-moz-appearance: none) {
+    @content;
+  }
+}
+
 // Gradient mixins
 @mixin gradient-text {
   background-image: linear-gradient(to right, $yellow 0%, $grey 100%);
   background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: 100%;
   background-color: $yellow;
@@ -32,5 +46,7 @@ $dark-blue: #050369;
 
 @mixin gradient-border {
   border-image: linear-gradient(to right, $yellow 0%, $light-grey 100%);
+  -webkit-border-image: -webkit-linear-gradient(to right, $yellow 0%, $light-grey 100%);
   border-image-slice: 1;
+  -webkit-border-image-slice: 1;
 }
