@@ -32,7 +32,7 @@ The default branch is `dev`. `master` is only used for deploys.
 3. Add angular-cli-ghpages to the project
 ```ng add angular-cli-ghpages```
 4. Deploy to master branch
-```ng deploy --message="Deploy v0.0.2b1" --branch=master --cname=cindyvandooren.online```
+```ng deploy --message="Deploy v0.0.2b2" --branch=master --cname=cindyvandooren.online```
 
 ## Further help
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

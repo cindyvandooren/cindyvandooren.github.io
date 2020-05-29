@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "deploy": "ng deploy --message=\"Deploy v0.0.2\" --branch=master --cname=cindyvandooren.online"
   },
   "private": true,
   "dependencies": {
